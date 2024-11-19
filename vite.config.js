@@ -12,6 +12,7 @@ export default defineConfig({
       fileName: (format) => `botimoz.${format}.js`,
     },
     rollupOptions: {
+      external: ['react', 'react-dom'],
       output: {
         globals: {
           react: 'React',
