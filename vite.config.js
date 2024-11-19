@@ -5,6 +5,9 @@ import { resolve } from 'path';
 export default defineConfig({
   plugins: [react()],
   // base: '/Botify/',
+  define: {
+    'process.env': {},
+  },
   build: {
     lib: {
       entry: resolve(__dirname, 'src/main.jsx'), // Entry point for the web component
