@@ -4,6 +4,7 @@ import { resolve } from 'path';
 
 export default defineConfig({
   plugins: [react()],
+  // base: '/Botify/',
   build: {
     lib: {
       entry: resolve(__dirname, 'src/main.jsx'), // Entry point for the web component
@@ -12,7 +13,7 @@ export default defineConfig({
       fileName: (format) => `botimoz.${format}.js`,
     },
     rollupOptions: {
-      external: ['react', 'react-dom'],
+      external: [],
       output: {
         globals: {
           react: 'React',
