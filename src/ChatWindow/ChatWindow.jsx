@@ -11,7 +11,7 @@ function ChatWindow() {
   return (
     <div className="h-[450px] w-[350px] rounded-md border-2 border-black flex flex-col justify-start p-0">
       <ChatHeader />
-      <ChatPanel messageField={messageField}/>
+      <ChatPanel messageField={messageField} setMessageField={setMessageField}/>
       <ChatInteract setMessageField={setMessageField}/>
     </div>
   )

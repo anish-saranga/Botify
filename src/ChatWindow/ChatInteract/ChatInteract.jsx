@@ -8,6 +8,7 @@ function ChatInteract( { setMessageField } ) {
     if(message.length > 0) {
       setMessageField(message)
     }
+    // reset the input field
     document.getElementById('botimoz-input-field').value = ''
   }
 
@@ -22,7 +23,7 @@ function ChatInteract( { setMessageField } ) {
             sendMessageToChat()
           }
         }}/>
-        
+
         <button className="bg-blue-500 text-white p-1 m-1"
         onClick={() => sendMessageToChat()}
         >Send</button>
