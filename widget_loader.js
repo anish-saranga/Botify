@@ -1,14 +1,28 @@
-(async function () {
-    // Step 1: Load Tailwind CSS
-    const loadTailwindCSS = async () => {
-          const tailwindLink = document.createElement('script');
-          tailwindLink.src = 'https://cdn.tailwindcss.com';
+(function () {
+  const loadTailwindCSS = async () => {
+    return new Promise((resolve, reject) => {
+      const tailwindLink = document.createElement('script');
+      tailwindLink.src = 'https://cdn.tailwindcss.com';
+  
 
-          document.head.appendChild(tailwindLink);
+      tailwindLink.onload = () => {
+        console.log('Tailwind CSS script loaded');
+        resolve();
       };
-      
-      await loadTailwindCSS();
-      
+  
+
+      tailwindLink.onerror = () => {
+        console.error('Failed to load Tailwind CSS script');
+        reject(new Error('Failed to load Tailwind CSS'));
+      };
+  
+      document.head.appendChild(tailwindLink);
+    });
+  };
+  
+    (async () =>
+      await loadTailwindCSS()
+    )()    
   
     // Step 2: create widget-bot and add it to the DOM
     // const defineWidgetCreator = () => {
