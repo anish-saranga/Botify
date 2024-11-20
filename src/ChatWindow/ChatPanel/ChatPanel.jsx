@@ -1,9 +1,8 @@
 /* eslint-disable react/prop-types */
 import UserChatBubble from "../../ChatBubbles/UserChatBubble";
 import BotChatBubble from "../../ChatBubbles/BotChatBubble";
-import { useContext } from "react";
+import { useContext, useEffect, useRef } from "react";
 import { ChatContext } from "../../App";
-
 /**
  * Component to display chat history with bot
  * @param {Object} - chatHistory  
@@ -12,7 +11,13 @@ import { ChatContext } from "../../App";
 function ChatPanel({ chatHistory }) {
 
   const { chat_bg_color } = useContext(ChatContext)
+  const dummyRef = useRef();
 
+  // for scrolling to bottom as new chat bubbles are added
+  useEffect(() => {
+    dummyRef.current.scrollIntoView({ behavior: "smooth", block: "start" })
+  }, [chatHistory])
+  
   return (
   <>
   {/* dynamic tailwind classes?? */}
@@ -30,6 +35,7 @@ function ChatPanel({ chatHistory }) {
           )
         })
       }
+      <div ref={dummyRef}></div>
     </div>
 
   </>
