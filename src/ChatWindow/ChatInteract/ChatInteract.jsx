@@ -1,3 +1,4 @@
+import { RiMicLine } from "react-icons/ri";
 
 
 function ChatInteract( { setMessageField } ) {
@@ -14,18 +15,20 @@ function ChatInteract( { setMessageField } ) {
   }
 
   return (
-    <div className="bg-zinc-400 p-1">
+    <div className="bg-blue-500 p-1 rounded-b-md">
       <div className="flex justify-start items-center">
-        <div className="text-sm m-1">speech</div>
+        <div className="text-sm m-1 py-1 px-2 rounded-full hover:bg-blue-400">
+        <RiMicLine size={20} className="text-white"/>
+        </div>
 
-        <input id="botimoz-input-field" type="text" placeholder="Type a message..." className="w-full p-1 m-1" 
+        <input id="botimoz-input-field" type="text" placeholder="Type a message..." className="w-full p-1 m-1 rounded-full" 
         onKeyDown={(e) => {
           if(e.key === 'Enter') {
             sendMessageToChat()
           }
         }}/>
 
-        <button className="bg-blue-500 text-white p-1 m-1"
+        <button className="text-white py-1 px-3 m-1 rounded-full hover:bg-blue-400 transition"
         onClick={() => sendMessageToChat()}
         >Send</button>
       </div>
