@@ -38,7 +38,7 @@
     const loadBotScript = () => {
       const script = document.createElement('script');
       script.src = 'https://anish-saranga.github.io/Botify/botimoz.es.js'
-      script.async = true;
+      script.defer = true;
       script.onload = () => console.log('Bot loaded');
       script.onerror = () => console.error('Failed to load the script');
       document.head.appendChild(script);
