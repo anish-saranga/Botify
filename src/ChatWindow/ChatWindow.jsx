@@ -2,15 +2,17 @@
 import ChatHeader from "./ChatHeader/ChatHeader"
 import ChatPanel from "./ChatPanel/ChatPanel"
 import ChatInteract from "./ChatInteract/ChatInteract"
-import { useState, useEffect, useCallback } from "react"
+import { useState, useEffect, useCallback, useContext } from "react"
 import SECRETS from "../secrets"
+import { ChatContext } from "../App"
 
 /**
  * ChatWindow component
  * @returns {JSX.Element}
  */
-function ChatWindow( { className, bot_greeting }) {
+function ChatWindow( { className }) {
 
+  const { bot_greeting } = useContext(ChatContext)
   const [messageField, setMessageField] = useState('') 
   const [chatHistory, setChatHistory] = useState([
     {

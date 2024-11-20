@@ -9,6 +9,11 @@ const WebComponent = r2wc(App, {
     {
         license: "string",
         bot_greeting: "string",
+        user_avatar: "string",
+        bot_avatar: "string",
+        bot_name: "string",
+        show_powered_by: "string",
+        chat_bg_color: "string",
     }
 });
 

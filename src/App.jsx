@@ -1,18 +1,23 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState, createContext } from "react"
 import ChatWindow from "./ChatWindow/ChatWindow";
 import ChatTrigger from "./ChatTrigger/ChatTrigger";
 import SECRETS from "./secrets";
 
+// contxt for chat, to avoid prop drilling
+export const ChatContext = createContext()
 
-function App({ bot_name, bot_avatar, bot_greeting, bot_user_input_placeholder, 
-              user_avatar, chat_area_bg, user_dialog_bg, bot_dialog_bg, chat_header_bg, license,
-              host_url, height, width, start_open=false, right_position, bottom_position,
-              chat_header_title, trigger_icon_open, trigger_icon_close, trigger_icon_bg }) {
+
+function App(props) {
 
   
-  const [open, setOpen] = useState(start_open)
+  const [open, setOpen] = useState(props.start_open || false)
   const [ready, setReady] = useState(false)
+  const values = props
 
+  // secrets
+  const license = props.license
+
+  console.log("props", props)
   // populate secrets from the props - license
   useEffect(() => {
     const licenseSecretsDecoded = atob(license)
@@ -30,11 +35,13 @@ function App({ bot_name, bot_avatar, bot_greeting, bot_user_input_placeholder,
   <>
   {
     ready && 
-    <main className="flex justify-start items-end m-5">
-      <ChatWindow className={`${open ? 'block' : 'hidden'} mb-12`}
-        bot_greeting={bot_greeting}/> 
-      <ChatTrigger open={open} setOpen={setOpen}/>
-    </main>
+    <ChatContext.Provider value={values}>
+      <main className="flex justify-start items-end m-5">
+        <ChatWindow className={`${open ? 'block' : 'hidden'} mb-12`}
+          /> 
+        <ChatTrigger open={open} setOpen={setOpen}/>
+      </main>
+    </ChatContext.Provider>
   }
   </>
   )
