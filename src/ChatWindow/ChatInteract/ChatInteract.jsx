@@ -2,6 +2,7 @@
 
 function ChatInteract( { setMessageField } ) {
 
+  // handle check message entered + set Message field of parent
   function sendMessageToChat() {
     let message = document.getElementById('botimoz-input-field').value
     message = message.trim()

@@ -24,19 +24,17 @@ function App({ bot_name, bot_avatar, bot_greeting, bot_user_input_placeholder,
   }, [])
   
 
+  console.log("opne state", open)
+
   return (
   <>
   {
     ready && 
     <main className="flex justify-start items-end m-5">
-      {
-    open &&
-      <ChatWindow /> 
-  }
+      <ChatWindow className={`${open ? 'block' : 'hidden'} mb-12`}/> 
       <ChatTrigger open={open} setOpen={setOpen}/>
-     
     </main>
-              }
+  }
   </>
   )
   
