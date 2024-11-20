@@ -1,13 +1,15 @@
 (function () {
     // Step 1: Load Tailwind CSS
-    const loadTailwindCSS = () => {
+    const loadTailwindCSS = async () => {
           const tailwindLink = document.createElement('script');
           tailwindLink.src = 'https://cdn.tailwindcss.com';
 
           document.head.appendChild(tailwindLink);
       };
       
-
+      (async () => {
+        await loadTailwindCSS();
+      })();
       
   
     // Step 2: create widget-bot and add it to the DOM
@@ -45,8 +47,7 @@
       document.head.appendChild(script);
     };
   
-    // Execute the steps
-    loadTailwindCSS();
+
     // defineWidgetCreator();
     loadBotScript();
   })();
