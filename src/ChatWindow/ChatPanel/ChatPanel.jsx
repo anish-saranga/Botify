@@ -12,7 +12,7 @@ function ChatPanel({ chatHistory }) {
 
   return (
   <>
-    <div className="flex-grow overflow-y-scroll px-1 py-1">
+    <div className="flex-grow overflow-y-scroll scroll-smooth px-1 py-1 border-2 border-blue-500">
       {
         chatHistory.map((chat, index) => {
           // render chat bubbles

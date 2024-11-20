@@ -9,13 +9,13 @@ import SECRETS from "../secrets"
  * ChatWindow component
  * @returns {JSX.Element}
  */
-function ChatWindow( { className }) {
+function ChatWindow( { className, bot_greeting }) {
 
   const [messageField, setMessageField] = useState('') 
   const [chatHistory, setChatHistory] = useState([
     {
       type: 'bot',
-      message: 'Hello! How can I help you today?'
+      message: bot_greeting
     }
   ])
 
@@ -87,14 +87,12 @@ function ChatWindow( { className }) {
     });
 
 
-    console.log("chat history...", chatHistory)
-
 
 
   return (
-    <div className={`h-[450px] w-[350px] rounded-md border-2 border-black flex flex-col justify-start p-0 ${className}`}>
+    <div className={`h-[500px] w-[350px] rounded-md flex flex-col justify-start p-0 ${className}`}>
       <ChatHeader />
-      <ChatPanel chatHistory={chatHistory}/>
+      <ChatPanel chatHistory={chatHistory} />
       <ChatInteract setMessageField={setMessageField}/>
     </div>
   )

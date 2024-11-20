@@ -31,7 +31,8 @@ function App({ bot_name, bot_avatar, bot_greeting, bot_user_input_placeholder,
   {
     ready && 
     <main className="flex justify-start items-end m-5">
-      <ChatWindow className={`${open ? 'block' : 'hidden'} mb-12`}/> 
+      <ChatWindow className={`${open ? 'block' : 'hidden'} mb-12`}
+        bot_greeting={bot_greeting}/> 
       <ChatTrigger open={open} setOpen={setOpen}/>
     </main>
   }

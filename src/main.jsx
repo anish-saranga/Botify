@@ -8,6 +8,7 @@ const WebComponent = r2wc(App, {
     props:
     {
         license: "string",
+        bot_greeting: "string",
     }
 });
 
