@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import ChatHeader from "./ChatHeader/ChatHeader"
 import ChatPanel from "./ChatPanel/ChatPanel"
 import ChatInteract from "./ChatInteract/ChatInteract"
@@ -24,13 +25,14 @@ function ChatWindow( { className }) {
     if(messageField.trim() === '') return
 
     // add new user chat bubble
-    setChatHistory([
-      ...chatHistory,
+    setChatHistory((chat) => (
+      [
+      ...chat,
       {
         type: 'user',
         message: messageField
       }
-    ])
+    ]))
 
     // send message content to bot
     handleUserMessage(messageField)
@@ -62,15 +64,18 @@ function ChatWindow( { className }) {
                 "Content-type": "application/json; charset=UTF-8"
               }
             });
-
+            console.log("in here 4")
             response = await response.json();
             // console.log("response", response.data.response)
-            setChatHistory([ ...chatHistory, {
-              type: 'bot',
-              message: response.data.response
-            }])
-
-
+            setChatHistory((chat) => (
+              [
+              ...chat,
+              {
+                type: 'bot',
+                message: response.data.response
+              }
+            ]))
+            console.log("in here 5")
         } catch (error){
             console.log("Error in fetching response from bot", error);
         }
@@ -82,6 +87,7 @@ function ChatWindow( { className }) {
     });
 
 
+    console.log("chat history...", chatHistory)
 
 
 
