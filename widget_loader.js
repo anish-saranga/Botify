@@ -1,4 +1,4 @@
-(function () {
+(async function () {
   const loadTailwindCSS = async () => {
     return new Promise((resolve, reject) => {
       const tailwindLink = document.createElement('script');
@@ -6,7 +6,7 @@
   
 
       tailwindLink.onload = () => {
-        console.log('Tailwind CSS script loaded');
+        // console.log('Tailwind CSS script loaded');
         resolve();
       };
   
@@ -20,9 +20,9 @@
     });
   };
   
-    (async () =>
-      await loadTailwindCSS()
-    )()    
+
+    await loadTailwindCSS()
+
   
     // Step 2: create widget-bot and add it to the DOM
     // const defineWidgetCreator = () => {
