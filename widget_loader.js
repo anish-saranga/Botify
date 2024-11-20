@@ -3,6 +3,7 @@
     const loadTailwindCSS = () => {
           const tailwindLink = document.createElement('script');
           tailwindLink.src = 'https://cdn.tailwindcss.com';
+          tailwindLink.async = true
 
           document.head.appendChild(tailwindLink);
       };
