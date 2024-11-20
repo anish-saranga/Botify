@@ -1,4 +1,4 @@
-(function () {
+(async function () {
     // Step 1: Load Tailwind CSS
     const loadTailwindCSS = async () => {
           const tailwindLink = document.createElement('script');
@@ -7,9 +7,7 @@
           document.head.appendChild(tailwindLink);
       };
       
-      (async () => {
-        await loadTailwindCSS();
-      })();
+      await loadTailwindCSS();
       
   
     // Step 2: create widget-bot and add it to the DOM
