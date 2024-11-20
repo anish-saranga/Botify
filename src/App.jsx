@@ -17,7 +17,6 @@ function App(props) {
   // secrets
   const license = props.license
 
-  console.log("props", props)
   // populate secrets from the props - license
   useEffect(() => {
     const licenseSecretsDecoded = atob(license)
@@ -29,7 +28,6 @@ function App(props) {
   }, [])
   
 
-  console.log("opne state", open)
 
   return (
   <>

@@ -46,7 +46,6 @@ function ChatWindow( { className }) {
     // api calls to optalk
     const handleUserMessage = useCallback((userPrompt) => {
         const getResponseFromBot = async (userPrompt) => {
-          console.log("in here 2")
           let requestBody = {
             "request": {
               "message": userPrompt
@@ -56,7 +55,6 @@ function ChatWindow( { className }) {
              "bot_secret": SECRETS.BOT_SECRET
           }
 
-          console.log("in here 3")
           let response;
           try{
             response = await fetch(SECRETS.CHAT_URL, {
@@ -66,9 +64,8 @@ function ChatWindow( { className }) {
                 "Content-type": "application/json; charset=UTF-8"
               }
             });
-            console.log("in here 4")
+
             response = await response.json();
-            // console.log("response", response.data.response)
             setChatHistory((chat) => (
               [
               ...chat,
@@ -77,9 +74,9 @@ function ChatWindow( { className }) {
                 message: response.data.response
               }
             ]))
-            console.log("in here 5")
+
         } catch (error){
-            console.log("Error in fetching response from bot", error);
+            console.error("Error in fetching response from bot", error);
         }
 
         }
