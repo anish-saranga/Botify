@@ -21499,7 +21499,7 @@ function ek({ setMessageField: b }) {
         id: "botimoz-input-field",
         type: "text",
         placeholder: "Type a message...",
-        className: "w-full p-1 m-1 rounded-full bg-white",
+        className: "w-full p-1 m-1 rounded-full bg-white text-black",
         onKeyDown: (w) => {
           w.key === "Enter" && M();
         }
@@ -21616,4 +21616,4 @@ const ak = AD(rk, {
     chat_bg_color: "string"
   }
 });
-customElements.define("botimoz-widget", ak);
+customElements.define("botimoz-widget", ak, { shadow: !1 });
