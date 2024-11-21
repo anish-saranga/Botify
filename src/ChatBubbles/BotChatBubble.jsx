@@ -25,14 +25,14 @@ function BotChatBubble({ message}) {
       ? (
         <div className="p-2 w-fit">
           <div className="flex space-x-2">
-          <div className='w-2 h-2 bg-blue-900 rounded-full animate-bounce [animation-delay:-0.3s]'></div>
-          <div className='h-2 w-2 bg-blue-900 rounded-full animate-bounce [animation-delay:-0.15s]'></div>
-          <div className='h-2 w-2 bg-blue-900 rounded-full animate-bounce'></div>
+          <div className='w-[5px] h-[5px] bg-blue-900 rounded-full animate-bounce [animation-delay:-0.3s]'></div>
+          <div className='w-[5px] h-[5px] bg-blue-900 rounded-full animate-bounce [animation-delay:-0.15s]'></div>
+          <div className='w-[5px] h-[5px] bg-blue-900 rounded-full animate-bounce'></div>
           </div>
         </div>
       )
       : (
-        <div>{message}</div>
+        <div className="text-sm">{message}</div>
       )
   }
     </div>
