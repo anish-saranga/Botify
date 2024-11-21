@@ -21333,7 +21333,7 @@ function VD() {
 function PD({ message: b }) {
   const { user_avatar: M } = Kn.useContext(If);
   return /* @__PURE__ */ it.jsxs("div", { className: "flex flex-row justify-end items-start my-1 py-1 px-2", children: [
-    /* @__PURE__ */ it.jsx("div", { name: "user-bubble", className: "bg-blue-100 rounded-md px-2 py-1 max-w-2/3 text-right text-sm", children: b }),
+    /* @__PURE__ */ it.jsx("div", { name: "user-bubble", className: "bg-blue-100 rounded-md px-2 py-1 max-w-2/3 text-right text-sm text-black", children: b }),
     /* @__PURE__ */ it.jsx("img", { src: M, alt: "user-avatar", className: "w-8 h-8 rounded-full mx-2" })
   ] });
 }
@@ -21345,7 +21345,7 @@ function BD({ message: b }) {
       /* @__PURE__ */ it.jsx("div", { className: "w-[5px] h-[5px] bg-blue-900 rounded-full animate-bounce [animation-delay:-0.3s]" }),
       /* @__PURE__ */ it.jsx("div", { className: "w-[5px] h-[5px] bg-blue-900 rounded-full animate-bounce [animation-delay:-0.15s]" }),
       /* @__PURE__ */ it.jsx("div", { className: "w-[5px] h-[5px] bg-blue-900 rounded-full animate-bounce" })
-    ] }) }) : /* @__PURE__ */ it.jsx("div", { className: "text-sm", children: b }) })
+    ] }) }) : /* @__PURE__ */ it.jsx("div", { className: "text-sm text-black", children: b }) })
   ] });
 }
 function $D({ chatHistory: b }) {
@@ -21499,7 +21499,7 @@ function ek({ setMessageField: b }) {
         id: "botimoz-input-field",
         type: "text",
         placeholder: "Type a message...",
-        className: "w-full p-1 m-1 rounded-full",
+        className: "w-full p-1 m-1 rounded-full bg-white",
         onKeyDown: (w) => {
           w.key === "Enter" && M();
         }
