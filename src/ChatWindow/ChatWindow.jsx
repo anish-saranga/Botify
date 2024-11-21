@@ -33,6 +33,10 @@ function ChatWindow( { className }) {
       {
         type: 'user',
         message: messageField
+      }, 
+      {
+        type: 'bot',
+        message: "Waiting for response from bot..."
       }
     ]))
 
@@ -66,14 +70,16 @@ function ChatWindow( { className }) {
             });
 
             response = await response.json();
-            setChatHistory((chat) => (
-              [
-              ...chat,
+            setChatHistory((chat) => {
+
+              const ActualChat = chat.slice(0, -1)
+              return [
+              ...ActualChat,
               {
                 type: 'bot',
                 message: response.data.response
               }
-            ]))
+            ]})
 
         } catch (error){
             console.error("Error in fetching response from bot", error);
