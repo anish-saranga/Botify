@@ -32,7 +32,7 @@ function BotChatBubble({ message}) {
         </div>
       )
       : (
-        <div className="text-sm">{message}</div>
+        <div className="text-sm text-black">{message}</div>
       )
   }
     </div>

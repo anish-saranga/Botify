@@ -6,7 +6,6 @@
     
   
         tailwindLink.onload = () => {
-          // console.log('Tailwind CSS script loaded');
           resolve();
         };
     
@@ -23,19 +22,7 @@
   
       await loadTailwindCSS()
   
-    
-      // Step 2: create widget-bot and add it to the DOM
-      // const defineWidgetCreator = () => {
-      //   class WidgetCreator extends HTMLElement {
-      //     connectedCallback() {
-      //     }
-      //   }
-    
-      //   // Register the <widget-creator> element
-      //   customElements.define('botimoz-widget', WidgetCreator);
-      // };
-    
-      // 2.1
+  
       const widget = document.createElement('botimoz-widget');
       widget.setAttribute('license', "YTI3NjlkMzMtNDNlYy00ZWEwLWFiYTQtMTI5NjIxNDEyMjc0O2M4ZDA1YjVmLWQzZjAtNGVmMy05YTgwLThmODA1OGRjMWUzZDs=")
       widget.setAttribute('bot_greeting', "Hello! How can I help you today?")
@@ -48,7 +35,8 @@
   
       document.body.appendChild(widget);
   
-      // Step 3: Load actual script
+
+
       const loadBotScript = () => {
         const script = document.createElement('script');
         script.src = 'https://anish-saranga.github.io/Botify/botimoz.es.js'
@@ -60,7 +48,6 @@
       };
     
   
-      // defineWidgetCreator();
       loadBotScript();
     })();
     

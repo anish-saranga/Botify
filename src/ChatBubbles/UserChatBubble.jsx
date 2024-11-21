@@ -14,7 +14,7 @@ function UserChatBubble({ message}) {
   return (
     <div className="flex flex-row justify-end items-start my-1 py-1 px-2">
       {/* message bubble */}
-      <div name="user-bubble" className="bg-blue-100 rounded-md px-2 py-1 max-w-2/3 text-right text-sm">
+      <div name="user-bubble" className="bg-blue-100 rounded-md px-2 py-1 max-w-2/3 text-right text-sm text-black">
         {
           message
         }
