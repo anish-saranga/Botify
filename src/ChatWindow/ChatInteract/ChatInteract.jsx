@@ -21,7 +21,7 @@ function ChatInteract( { setMessageField } ) {
         <RiMicLine size={20} className="text-white"/>
         </div>
 
-        <input id="botimoz-input-field" type="text" placeholder="Type a message..." className="w-full p-1 m-1 rounded-full bg-white" 
+        <input id="botimoz-input-field" type="text" placeholder="Type a message..." className="w-full p-1 m-1 rounded-full bg-white text-black" 
         onKeyDown={(e) => {
           if(e.key === 'Enter') {
             sendMessageToChat()
