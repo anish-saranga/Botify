@@ -14,11 +14,11 @@ function BotChatBubble({ message}) {
   return (
     <div className="flex flex-row justify-start items-start my-1 py-1 px-2">
       {/* avatar */}
-      <div className="bg-black rounded-full py-1 px-2 mx-1 w-fit">
+      <div className="bg-black rounded-full py-1 px-2 mx-1 min-w-fit">
       <img src={bot_avatar} alt="bot-avatar" className="w-6 h-7" />
       </div>
       {/* message bubble */}
-      <div name="bot-bubble" className="bg-blue-200 rounded-md px-2 py-1 max-w-8/12 w-fit text-left">
+      <div name="bot-bubble" className="bg-blue-200 rounded-md px-2 py-1 w-fit text-left">
   {
     message === "Waiting for response from bot..."
     // show loading animation
@@ -29,14 +29,13 @@ function BotChatBubble({ message}) {
           <div className='h-2 w-2 bg-blue-900 rounded-full animate-bounce [animation-delay:-0.15s]'></div>
           <div className='h-2 w-2 bg-blue-900 rounded-full animate-bounce'></div>
           </div>
-
         </div>
       )
       : (
         <div>{message}</div>
       )
   }
-</div>
+    </div>
 
     </div>
   )
